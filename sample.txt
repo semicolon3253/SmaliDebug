@@ -1,0 +1,39 @@
+#TODO Replace all {PACKAGE} to your package like this: com/test/package/
+
+# printErrorLog
+const-string v0, "SmaliDebug"
+const-string v1, "This is Error"
+invoke-static {v0, v1}, L{PACKAGE}SmaliDebug;->printErrorLog(Ljava/lang/String;Ljava/lang/Object;)V
+
+# printWarningLog
+const-string v0, "SmaliDebug"
+const-string v1, "This is Warning"
+invoke-static {v0, v1}, L{PACKAGE}SmaliDebug;->printWarningLog(Ljava/lang/String;Ljava/lang/Object;)V
+
+# printInfoLog
+const-string v0, "SmaliDebug"
+const-string v1, "This is Info"
+invoke-static {v0, v1}, L{PACKAGE}SmaliDebug;->printInfoLog(Ljava/lang/String;Ljava/lang/Object;)V
+
+# printDebugLog
+const-string v0, "SmaliDebug"
+const-string v1, "This is Debug"
+invoke-static {v0, v1}, L{PACKAGE}SmaliDebug;->printDebugLog(Ljava/lang/String;Ljava/lang/Object;)V
+
+# printVerboseLog
+const-string v0, "SmaliDebug"
+const-string v1, "This is Verbose"
+invoke-static {v0, v1}, L{PACKAGE}SmaliDebug;->printVerboseLog(Ljava/lang/String;Ljava/lang/Object;)V
+
+# printSys
+const-string v0, "This is System.out.println"
+invoke-static {v0}, L{PACKAGE}SmaliDebug;->printSys(Ljava/lang/Object;)V
+
+# stackTrace
+invoke-static {}, L{PACKAGE}SmaliDebug;->stackTrace()V
+
+# printFields
+invoke-static {v0}, L{PACKAGE}SmaliDebug;->printFields(Ljava/lang/Object;)V
+
+# setUncaughtException
+invoke-static {}, L{PACKAGE}SmaliDebug;->setUncaughtException()V
