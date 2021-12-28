@@ -1,6 +1,4 @@
-#TODO Replace all {PACKAGE} to your package like this: com/test/package
-
-.class L{PACKAGE}/SmaliDebug$1;
+.class Lkr/semicolon1/smalidebug/SmaliDebug$1;
 .super Ljava/lang/Object;
 .source "SmaliDebug.java"
 
@@ -10,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = L{PACKAGE}/SmaliDebug;->setUncaughtException()V
+    value = Lkr/semicolon1/smalidebug/SmaliDebug;->setUncaughtException()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 49
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -37,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 52
+    .line 56
     invoke-virtual {p2}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 53
+    .line 57
     return-void
 .end method

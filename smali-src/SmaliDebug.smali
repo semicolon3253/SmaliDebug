@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 8
+    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,14 +18,14 @@
     .registers 3
 
     .prologue
-    .line 23
+    .line 27
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 24
+    .line 28
     return-void
 .end method
 
@@ -33,43 +33,34 @@
     .registers 3
 
     .prologue
-    .line 11
+    .line 15
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 12
+    .line 16
     return-void
 .end method
 
 .method public static printFields(Ljava/lang/Object;)V
     .registers 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Object;",
-            ")V"
-        }
-    .end annotation
 
     .prologue
-    .line 63
+    .line 67
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 64
+    .line 68
     const-string v0, "line.separator"
 
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 66
+    .line 70
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -80,15 +71,15 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 67
+    .line 71
     const-string v0, " Object {"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 68
+    .line 72
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 70
+    .line 74
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -97,7 +88,7 @@
 
     move-result-object v4
 
-    .line 72
+    .line 76
     array-length v5, v4
 
     const/4 v0, 0x0
@@ -107,12 +98,12 @@
     :goto_29
     if-lt v1, v5, :cond_3a
 
-    .line 84
+    .line 88
     const-string v0, "}"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 85
+    .line 89
     const-string v0, "SmaliDebugField"
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -121,37 +112,37 @@
 
     invoke-static {v0, v1}, Lkr/semicolon1/smalidebug/SmaliDebug;->printDebugLog(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 86
+    .line 90
     return-void
 
-    .line 72
+    .line 76
     :cond_3a
     aget-object v0, v4, v1
 
-    .line 73
+    .line 77
     const-string v6, "  "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 75
+    .line 79
     const/4 v6, 0x1
 
     :try_start_42
     invoke-virtual {v0, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 76
+    .line 80
     invoke-virtual {v0}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v6
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 77
+    .line 81
     const-string v6, ": "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 78
+    .line 82
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -160,22 +151,22 @@
     :try_end_58
     .catch Ljava/lang/IllegalAccessException; {:try_start_42 .. :try_end_58} :catch_5f
 
-    .line 82
+    .line 86
     :goto_58
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 72
+    .line 76
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_29
 
-    .line 79
+    .line 83
     :catch_5f
     move-exception v0
 
-    .line 80
+    .line 84
     const-string v6, "SmaliDebug"
 
     invoke-static {v6, v0}, Lkr/semicolon1/smalidebug/SmaliDebug;->printErrorLog(Ljava/lang/String;Ljava/lang/Object;)V
@@ -187,14 +178,14 @@
     .registers 3
 
     .prologue
-    .line 19
+    .line 23
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 20
+    .line 24
     return-void
 .end method
 
@@ -202,7 +193,7 @@
     .registers 3
 
     .prologue
-    .line 34
+    .line 38
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -211,7 +202,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 35
+    .line 39
     return-void
 .end method
 
@@ -219,14 +210,14 @@
     .registers 3
 
     .prologue
-    .line 27
+    .line 31
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 28
+    .line 32
     return-void
 .end method
 
@@ -234,14 +225,34 @@
     .registers 3
 
     .prologue
-    .line 15
+    .line 19
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 16
+    .line 20
+    return-void
+.end method
+
+.method public static saveFile(Ljava/lang/Object;)V
+    .registers 3
+
+    .prologue
+    .line 94
+    new-instance v0, Ljava/lang/Thread;
+
+    new-instance v1, Lkr/semicolon1/smalidebug/SmaliDebug$2;
+
+    invoke-direct {v1, p0}, Lkr/semicolon1/smalidebug/SmaliDebug$2;-><init>(Ljava/lang/Object;)V
+
+    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    .line 109
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    .line 110
     return-void
 .end method
 
@@ -249,22 +260,22 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 53
     new-instance v0, Lkr/semicolon1/smalidebug/SmaliDebug$1;
 
     invoke-direct {v0}, Lkr/semicolon1/smalidebug/SmaliDebug$1;-><init>()V
 
-    .line 55
+    .line 59
     invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    .line 56
+    .line 60
     const-string v0, "SmaliDebug"
 
     const-string v1, "UncaughtExceptionHandler was setted."
 
     invoke-static {v0, v1}, Lkr/semicolon1/smalidebug/SmaliDebug;->printDebugLog(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 57
+    .line 61
     return-void
 .end method
 
@@ -272,13 +283,13 @@
     .registers 1
 
     .prologue
-    .line 41
+    .line 45
     new-instance v0, Ljava/lang/Throwable;
 
     invoke-direct {v0}, Ljava/lang/Throwable;-><init>()V
 
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 42
+    .line 46
     return-void
 .end method

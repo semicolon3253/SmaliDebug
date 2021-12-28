@@ -13,7 +13,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        startTest();
+        SmaliDebug.saveFile("ㅋㅋㅋ123");
+        //startTest();
     }
     
     private void startTest(){

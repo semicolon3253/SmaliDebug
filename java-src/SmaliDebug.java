@@ -4,6 +4,10 @@ import java.lang.Thread;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.lang.StringBuilder;
 import java.lang.reflect.Field;
+import java.io.FileOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileWriter;
 
 public class SmaliDebug {
     // Print Log
@@ -83,5 +87,25 @@ public class SmaliDebug {
         }
         result.append("}");
         printDebugLog("SmaliDebugField", result.toString());
+    }
+    
+    
+    public static void saveFile(Object data){
+        new Thread(new Runnable() {
+	        @Override
+	            public void run() {
+		            File file = new File("/storage/emulated/0/file.txt");
+                    try {
+                        if(!file.exists()) {
+                            file.createNewFile();
+                        }
+                        FileWriter writer = new FileWriter(file, false);
+                        writer.write(data.toString());
+                        writer.close();
+                    } catch (java.io.IOException e) {
+                        android.util.Log.e("SmaliDebugErr", e.toString());
+                    }
+	            }
+            }).start();
     }
 }

@@ -106,3 +106,14 @@ UncaughtExceptionHandler를 등록하여 처리되지 않은 예외 발생시 �
 ```
 invoke-static {}, Lkr/semicolon1/smalidebug/SmaliDebug;->setUncaughtException()V
 ```
+
+## saveFile
+받아온 문자열을 /storage/emulated/0/file.txt로 저장합니다.
+
+권한은 직접 앱 설정에서 켜주어야합니다. 또한 Manifast에 권한이 없으면 선언해주어야합니다.
+
+```
+const-string v0, "Some string..."
+
+invoke-static {v0}, Lkr/semicolon1/smalidebug/SmaliDebug;->saveFile(Ljava/lang/Object;)V
+```

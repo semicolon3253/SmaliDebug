@@ -22,7 +22,7 @@
     .registers 1
 
     .prologue
-    .line 49
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 52
+    .line 56
     invoke-virtual {p2}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 53
+    .line 57
     return-void
 .end method
