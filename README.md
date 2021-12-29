@@ -14,7 +14,7 @@
 
 # 사용방법
 
-1. SmaliDebug.smali와 SmaliDebug$1.smali를 다운로드합니다.(smali-src에 있는것 아님)
+1. SmaliDebug.smali와 SmaliDebug$1.smali, SmaliDebug$2.smali를 다운로드합니다.(smali-src에 있는것 아님)
 2. 두 파일을 텍스트 에디터로 엽니다.
 3. 두 파일의 모든 문자열 {PACKAGE}를 자신이 이 파일들을 넣을 패키지명으로 바꿔주세요. 예를들어 자신이 두 파일을 디컴파일된 앱의 .../com/test/app 폴더 내에 넣을것이라면 모든 {PACKAGE}를 com/test/app으로 교체합니다.
 4. 이제 두 파일을 해당 패키지에 위치하도록 붙여넣고 아래 문단처럼 메소드를 실행하는 코드를 원하는 smali파일에 넣고 빌드해서 쓰면됩니다.
